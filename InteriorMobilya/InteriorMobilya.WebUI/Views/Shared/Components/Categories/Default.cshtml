@@ -1,0 +1,10 @@
+﻿@using InteriorMobilya.WebUI.Extension;
+@model IEnumerable<InteriorMobilya.Model.Category>
+
+<div class="list-group">
+    <a href="#" class="list-group-item active">Kategoriler</a>
+    @foreach (var item in Model)
+    {
+        <a href="/@item.CategoryName.ToSeoUrl()" class="list-group-item">@item.CategoryName</a>
+    }
+</div>   

@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteriorMobilya.Core", "InteriorMobilya.Core\InteriorMobilya.Core.csproj", "{50A9CC6B-F3D0-48CA-B91B-A99A8CC0F9F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteriorMobilya.WebUI", "InteriorMobilya.WebUI\InteriorMobilya.WebUI.csproj", "{047A1901-A745-4C7E-92E1-321E2829D9AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteriorMobilya.DataAccess", "InteriorMobilya.DataAccess\InteriorMobilya.DataAccess.csproj", "{8F901215-D343-4E78-9B75-2C55361E2E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteriorMobilya.Service", "InteriorMobilya.Service\InteriorMobilya.Service.csproj", "{40FF7D38-A17C-47D9-819D-BA24C7D86477}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteriorMobilya.Model", "InteriorMobilya.Model\InteriorMobilya.Model.csproj", "{EE62BEB5-24DF-4A2F-B9AE-51D713169402}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50A9CC6B-F3D0-48CA-B91B-A99A8CC0F9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A9CC6B-F3D0-48CA-B91B-A99A8CC0F9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A9CC6B-F3D0-48CA-B91B-A99A8CC0F9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A9CC6B-F3D0-48CA-B91B-A99A8CC0F9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{047A1901-A745-4C7E-92E1-321E2829D9AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{047A1901-A745-4C7E-92E1-321E2829D9AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{047A1901-A745-4C7E-92E1-321E2829D9AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{047A1901-A745-4C7E-92E1-321E2829D9AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F901215-D343-4E78-9B75-2C55361E2E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F901215-D343-4E78-9B75-2C55361E2E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F901215-D343-4E78-9B75-2C55361E2E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F901215-D343-4E78-9B75-2C55361E2E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40FF7D38-A17C-47D9-819D-BA24C7D86477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40FF7D38-A17C-47D9-819D-BA24C7D86477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40FF7D38-A17C-47D9-819D-BA24C7D86477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40FF7D38-A17C-47D9-819D-BA24C7D86477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE62BEB5-24DF-4A2F-B9AE-51D713169402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE62BEB5-24DF-4A2F-B9AE-51D713169402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE62BEB5-24DF-4A2F-B9AE-51D713169402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE62BEB5-24DF-4A2F-B9AE-51D713169402}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

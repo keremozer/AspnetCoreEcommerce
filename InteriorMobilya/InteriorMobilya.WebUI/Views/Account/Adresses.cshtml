@@ -1,0 +1,42 @@
+﻿@model IEnumerable<InteriorMobilya.Model.CustomerAdress>
+@{
+    ViewData["Title"] = "Adres Ekle";
+    Layout = "~/Views/Shared/_LayoutProfil.cshtml";
+}
+<h2>Adreslerim </h2>
+<div class="panel panel-default">
+    <div class="panel-heading">Adres(ler) <span style="float:right"><a href="/adres-ekle">Yeni adres Ekle</a></span> </div>
+    <div class="panel-body">
+        @if (Model.Count() > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tanım</th>
+                        <th>Adres</th>
+                        <th width="5%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><a href="/adresim/@item.CustomerAdressID">@item.AdressTitle</a></td>
+                            <td>@item.AdressDescription</td>
+                            <td><span class="glyphicon glyphicon-remove remove2adress" data-id="@item.CustomerAdressID" onclick="return confirm('Adresinizi silmek istiyor musunuz?')"></span></td>
+                        </tr>
+                    }
+ 
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h4>* Kayıtlı adresiniz bulunmamaktadır. Lütfen yeni adres ekleyiniz.</h4>
+
+        }
+        
+    </div>
+    
+</div>
+

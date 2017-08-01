@@ -1,0 +1,59 @@
+﻿@model InteriorMobilya.WebUI.Models.OrderDetailViewModel
+@{
+    ViewData["Title"] = "Siparis Detayı";
+    Layout = "~/Views/Shared/_LayoutProfil.cshtml";
+}
+
+<h2>Sipariş Detayı </h2>
+<div class="panel panel-default">
+    <div class="panel-heading">Sipariş @Model.Order.OrderID Detayı  </div>
+    <div class="panel-body">
+        <div class="col-lg-12">
+            <h3>Şiparis </h3>
+            <strong> Sipariş Tarih :</strong>@Model.Order.OrderDate <br />
+            <strong> Sipariş Durumu :</strong>@Model.OrderStatus.Status <br />
+           
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Ürün </th>
+                        <th>Adet </th>
+                        <th>Birim Fiyat </th>
+                        <th>Toplam Fiyat </th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderDetail)
+                    {
+                        <tr>
+                            <td>@Model.Products.Where(x=>x.ProductID == item.ProductID).FirstOrDefault().ProductName</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.UnitPrice</td>
+                            <td>@(item.UnitPrice * item.Quantity)</td>
+                        </tr>
+                    }
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                        <th> Genel Toplam @Model.OrderDetail.Sum(x=>x.Quantity* x.UnitPrice) </th>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+        <hr />
+        <div class="col-lg-12">
+            <h3>Adres</h3>
+
+            <strong> AdSoyad :</strong>@Model.CustomerAdress.Name <br />
+            <strong> Telefon :</strong>@Model.CustomerAdress.Phone <br />
+            <strong> Tanım :</strong>@Model.CustomerAdress.AdressTitle   <br />
+            <strong> Adres :</strong>@Model.CustomerAdress.AdressDescription <br />
+        </div>
+    </div>
+</div>

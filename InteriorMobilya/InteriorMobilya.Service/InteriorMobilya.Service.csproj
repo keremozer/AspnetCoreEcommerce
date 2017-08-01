@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InteriorMobilya.DataAccess\InteriorMobilya.DataAccess.csproj" />
+    <ProjectReference Include="..\InteriorMobilya.Model\InteriorMobilya.Model.csproj" />
+  </ItemGroup>
+
+</Project>

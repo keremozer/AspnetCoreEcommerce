@@ -1,0 +1,6 @@
+﻿@model InteriorMobilya.Model.ShoppingCart
+
+
+ <ul class="nav navbar-nav navbar-right">
+    <li><a href="/sepetim" id="Sepetim"><span class="glyphicon glyphicon-shopping-cart"></span> Sepet(<span id="SepetCount">@Model.CartItems.Sum(x => x.Quantity)</span>)</a></li>
+</ul>

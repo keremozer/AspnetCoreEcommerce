@@ -1,0 +1,46 @@
+﻿@model InteriorMobilya.WebUI.Models.OrdersViewModel
+@{
+    ViewData["Title"] = "Siparişlerim";
+    Layout = "~/Views/Shared/_LayoutProfil.cshtml";
+}
+
+<h2>Şiparişlerim </h2>
+<div class="panel panel-default">
+    <div class="panel-heading">Sipariş(ler)   </div>
+    <div class="panel-body">
+        @if (Model.Orders.Count() > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sipariş ID</th>
+                        <th>Sipariş Durumu</th>
+                        <th>Sipariş Tarih</th>
+                        <th ></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Orders)
+                    {
+                        <tr>
+                            <td><a href="/siparis/@item.OrderID">@item.OrderID Siparişin Detayı</a></td>
+                            <td>@Model.OrderStatus.FirstOrDefault(x=>x.OrderStatusID == item.OrderStatusID).Status</td>
+                            <td>@item.OrderDate</td>
+                             
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h4>* Şiparişiniz bulunmamaktadır.</h4>
+
+        }
+
+    </div>
+
+</div>
+
+

@@ -1,0 +1,51 @@
+﻿ @model InteriorMobilya.WebUI.Extension.Paging<InteriorMobilya.Model.Product>
+
+    <div>
+        <h3 style="padding:10px;margin-bottom:0">Ürünler</h3>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="product-item">
+                <div class="pi-img-wrapper">
+                    <img src="@item.ImagePath" class="img-responsive" alt="@item.ProductName">
+                    <div>
+
+
+                       
+                    </div>
+                </div>
+                <h3><a href="#">@item.ProductName</a></h3>
+                <div class="pi-price">@item.UnitPrice ₺</div>
+                <a href="javascript:;" data-id="@item.ProductID" class="btn add2cart">Sepete Ekle</a>
+                @*<div class="sticker sticker-new"></div>*@
+            </div>
+        </div>
+    }
+
+   
+
+    <div class="col-sm-12">
+        <div class="pagination-wrapper">
+            <ul class="pagination" id="yw0">
+                @if (Model.HasPreviousPage)
+                {
+                    if (Model.PageIndex - 1 != 0)
+                    {
+                        <li class="previous"><a href="/urunler/@(Model.PageIndex-1)"><i class="glyphicon glyphicon-chevron-left"></i></a></li>
+                    }
+                    if (Model.PageIndex - 1 == 0)
+                    {
+                        <li class="previous"><a href="/"><i class="glyphicon glyphicon-chevron-left"></i></a></li>
+                    }
+                }
+                @if (Model.HasNextPage)
+                {
+                    <li class="next"><a href="/urunler/@(Model.PageIndex+1)"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+          
+                }
+                
+               
+            </ul>
+        </div>
+    </div>

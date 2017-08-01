@@ -1,0 +1,77 @@
+﻿@model InteriorMobilya.WebUI.Models.PaymentViewModel
+@{
+    ViewData["Title"] = "Ödeme";
+    Layout = "~/Views/Shared/_LayoutHesap.cshtml";
+}
+
+ 
+
+<div class="col-lg-8 col-md-12" style="margin-top:70px">
+    <div class="panel panel-default">
+        <div class="panel-heading">Adres(ler) <span style="float:right"><a href="/urunler">Alışverişe Devam Et</a></span> </div>
+
+        <div class="panel-body">
+            @if (Model.CustomerAdresses.Count > 0)
+            {
+               
+                <table class="table  table-responsive" id="Adresim">
+                    <thead>
+                        <tr style="font-weight:bold">
+                            <th></th>
+                            <th>Adres</th>
+                            <th></th>
+                            <th width="5%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CustomerAdresses)
+                        {
+                            <tr class="Adresses">
+                                <td><a href="/adresim/@item.CustomerAdressID">@item.AdressTitle</a></td>
+                                <td>@item.AdressDescription</td>
+                                <td><a href="/adresim/@item.CustomerAdressID">Güncelle</a></td>
+                                <td><input type="radio" name="Adress" value="Adress" data-id="@item.CustomerAdressID"/></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <h4>* Kayıtlı adresiniz bulunmamaktadır. Lütfen yeni adres ekleyiniz.</h4>
+
+            }
+          
+        </div>
+        <div class="panel-footer text-right"><a href="/adres-ekle?returnurl=@Context.Request.Path" class="btn btn-primary">Yeni Adres Ekle</a></div>
+    </div>
+</div>
+
+<div class="col-lg-4 col-md-12" style="margin-top:70px">
+    <div class="panel panel-default">
+        <div class="panel-heading text-center">Toplam @Model.ShoppingCart.CartItems.Sum(x=>x.Quantity) Ürün   </div>
+
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Ürün</th>
+                        <th>Fiyat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ShoppingCart.CartItems)
+                    {
+                        <tr>
+                            <td>@item.Product.ProductName (x @item.Quantity)</td>
+                            <td>@(item.Product.UnitPrice* item.Quantity) ₺</td>
+                        </tr>
+                    }
+                   
+                </tbody>
+            </table>
+           <p class="text-center" style="font-size:25px">@Model.ShoppingCart.Total ₺</p>
+        </div>
+        <div class="panel-footer text-right"><a href="#" class="btn btn-primary" id="Complete">Şiparişi Tamamla</a></div>
+    </div>
+</div>
